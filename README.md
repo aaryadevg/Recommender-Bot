@@ -23,7 +23,7 @@ and create a bot application
 
 add the created bot to a server using<br/>`https://discordapp.com/oauth2/authorize?client_id={YOUR CLIENT ID}&scope=bot&permissions=0`
 
-after this you should recieve a token for yor bot add this token to your environment variable:
+after this you should recieve a token for your bot add this token to your environment variable:
 
 ### MacOS
 * Navigate to your Home directory<br/>`cd .`
@@ -48,10 +48,10 @@ after this you should recieve a token for yor bot add this token to your environ
 **Unfortunetly I do not have much experience with a Linux based systems 🙁**
 
 Now its finally time to run the bot 
-Open up terminal or command promt (on windows)
+Open up terminal or command prompt (on windows)
 navigate to the directory where you saved the source for the bot
 run the "Bot.py script" using <br/>`Python3 Bot.py` **On MacOS** <br/> `python Bot.py` **On Windows**
-After everything is ready you should see a "ready" message printed to the terminal or command promt
+After everything is ready you should see a "ready" message printed to the terminal or command prompt
 
 ## Commands
 |  **Command**         |**description**                                       | **Parameters**  | 
