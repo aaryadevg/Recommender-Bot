@@ -62,3 +62,13 @@ After everything is ready you should see a "ready" message printed to the termin
 | `>similar [anime]`   | Shows the 5 most similar anime to the given anime    | `anime : string`|
 | `>random`            | Gets a random anime from the Database                | `None.`         |
 
+## Contribution
+Feel free to contribute to this project any contribution is very welcome and contributions are highly appreciated
+**Todo:**
+* Add more commands
+* Make commands case in-sensitive
+* Try using neural colaborative filltering for recommendation
+* Build a scrapper to get info for latest anime
+* Add a logo to the README
+
+
