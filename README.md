@@ -53,4 +53,12 @@ navigate to the directory where you saved the source for the bot
 run the "Bot.py script" using <br/>`Python3 Bot.py` **On MacOS** <br/> `python Bot.py` **On Windows**
 After everything is ready you should see a "ready" message printed to the terminal or command promt
 
+## Commands
+|  **Command**         |**description**                                       | **Parameters**  | 
+|----------------------|------------------------------------------------------|-----------------|
+| `>recommend [genre]` | Recommends a random anime of the given genre         | `genre : string`|
+| `>genres`            | Sends a List of all available genres in the Database | `None.`         |
+| `>search [anime]`    | Searches for the given anime                         | `anime : string`|
+| `>similar [anime]`   | Shows the 5 most similar anime to the given anime    | `anime : string`|
+| `>random`            | Gets a random anime from the Database                | `None.`         |
 
