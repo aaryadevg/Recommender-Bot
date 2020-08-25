@@ -1,6 +1,9 @@
+<img src="Rec bots Logo.png" alt="Logo Image" height="10%" width="10%">
+
 # Recommender-Bot
-A simple discord bot for recommending anime
+A simple discord bot for recommending anime <br/>
 uses a simple content based recommender system
+
 
 ## Dataset and Inspiration for the project:
 * [Original dataset](https://www.kaggle.com/CooperUnion/anime-recommendations-database) by CooperUnion
@@ -64,6 +67,8 @@ After everything is ready you should see a "ready" message printed to the termin
 
 ## Contribution
 Feel free to contribute to this project any contribution is very welcome and contributions are highly appreciated
+* Thank you to Ashish Ghosalkar for the logo [Ashish Ghosalkar](https://aghosalkar.myportfolio.com/) 
+
 **Todo:**
 * Add more commands
 * Make commands case in-sensitive
