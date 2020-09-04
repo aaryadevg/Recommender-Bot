@@ -2,7 +2,11 @@
 
 # Recommender-Bot
 A simple discord bot for recommending anime <br/>
-uses a simple content based recommender system
+uses a simple content based recommender system <br/>
+This bot is as a learning project, to learn about: 
+* recommender systems
+* async methods 
+* SQL 
 
 
 ## Dataset and Inspiration for the project:
