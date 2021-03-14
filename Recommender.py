@@ -4,6 +4,8 @@ import sqlite3 as SQL
 import numpy as np
 import pandas as pd
 
+import AppSettings
+
 
 def Encode(genre):
     ENCODING = {'Action': 0, 'Slice of Life': 1, 'Sports': 2, 'Mystery': 3, 'Game': 4, 'Dementia': 5, 'Magic': 6, 'Kids': 7, 'Space': 8, 'Shoujo': 9, 'Josei': 10, 'Yaoi': 11, 'School': 12, 'Shounen': 13, 'Seinen': 14, 'Romance': 15, 'Music': 16, 'Harem': 17, 'Martial Arts': 18, 'Police': 19, 'Hentai': 20, 'Shoujo Ai': 21,
@@ -50,7 +52,7 @@ def FindSimilarJaccard(a, k):
             if len(filtered) == k:
                 return filtered
             else:
-                if re.search(regex, i[0]) == None:
+                if re.search(regex, i[0]) == None and i[1] >= AppSettings.AppSettings["MinSimilartityScore"]:
                     filtered.append(i)
 
         con.close()

@@ -1,19 +1,23 @@
 <img src="Rec bots Logo.png" alt="Logo Image" height="10%" width="10%">
 
 # Recommender-Bot
+
 A simple discord bot for recommending anime <br/>
 uses a simple content based recommender system <br/>
-This bot is as a learning project, to learn about: 
+This bot is as a learning project, to learn about:
+
 * recommender systems
-* async methods 
-* SQL 
+* async methods
+* SQL
 
 
 ## Dataset and Inspiration for the project:
+
 * [Original dataset](https://www.kaggle.com/CooperUnion/anime-recommendations-database) by CooperUnion
 * [inspired by this kernel](https://www.kaggle.com/diekanugraha/finding-similar-anime-by-genre) by diekanugraha
 
 ## Requirements
+
 This discord bot is made in python and requires python 3.6+
 you can install python [Here](https://www.python.org/downloads/)
 
@@ -23,6 +27,7 @@ along with python the discord bot uses a few other additional packages
 * [Numpy](https://numpy.org/install/)
 
 ## Using the bot
+
 First clone or download the source from GitHub
 
 To use the Recommender-Bot you need to sign in to [Discord Devloper Portal](https://discord.com/developers/applications) 
@@ -33,6 +38,7 @@ add the created bot to a server using<br/>`https://discordapp.com/oauth2/authori
 after this you should recieve a token for your bot add this token to your environment variable:
 
 ### MacOS
+
 * Navigate to your Home directory<br/>`cd .`
 * You may save a copy of the .bash_profile before editing 
 * Open the .bash_profile file<br/>`nano .bash_profile`
@@ -42,6 +48,7 @@ after this you should recieve a token for your bot add this token to your enviro
 *If you require any further assistance with this please check out [This article](https://medium.com/@himanshuagarwal1395/setting-up-environment-variables-in-macos-sierra-f5978369b255)*
 
 ### Windows 10
+
 * Type "env" in the search
 * Click on "Edit system environment variables"
 * Click on "environment variables"
@@ -52,7 +59,7 @@ after this you should recieve a token for your bot add this token to your enviro
 
 *If you require any further assistance with this please check out [This article](https://www.architectryan.com/2018/08/31/how-to-change-environment-variables-on-windows-10/)*
 
-**Unfortunetly I do not have much experience with a Linux based systems 🙁**
+*Unfortunetly I do not have much experience with a Linux based systems 🙁*
 
 Now its finally time to run the bot 
 Open up terminal or command prompt (on windows)
@@ -61,6 +68,7 @@ run the "Bot.py script" using <br/>`Python3 Bot.py` **On MacOS** <br/> `python B
 After everything is ready you should see a "ready" message printed to the terminal or command prompt
 
 ## Commands
+
 |  **Command**         |**description**                                       | **Parameters**  | 
 |----------------------|------------------------------------------------------|-----------------|
 | `>recommend [genre]` | Recommends a random anime of the given genre         | `genre : string`|
@@ -70,10 +78,13 @@ After everything is ready you should see a "ready" message printed to the termin
 | `>random`            | Gets a random anime from the Database                | `None.`         |
 
 ## Contribution
+
 Feel free to contribute to this project any contribution is very welcome and contributions are highly appreciated
+
 * Thank you to Ashish Ghosalkar for the logo [Ashish Ghosalkar](https://aghosalkar.myportfolio.com/) 
 
 **Todo:**
+
 * Add more commands
 * Make commands case in-sensitive
 * Try using neural colaborative filltering for recommendation

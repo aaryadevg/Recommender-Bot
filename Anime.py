@@ -10,7 +10,7 @@ class Anime(object):
     @staticmethod
     def FromTuple(t):
         if len(t) != 6:
-            raise Exception(f"Length of tuple should be 5 length is {len(t)}")
+            raise Exception(f"Length of tuple should be 5, length is {len(t)}")
         else:
             return Anime(t[0], t[1], t[2], t[3], t[4], t[5])
 

@@ -3,6 +3,8 @@ from discord.ext import commands
 import Database
 import Recommender
 import os
+import AppSettings
+
 
 # Reads token from Token.txt
 
@@ -40,7 +42,7 @@ async def recommend(ctx, genre):
     anime = Database.Get(genre)
     print(anime)
     if anime is not None:
-        await ctx.send(f"Try out {anime[0]}  anime and has an average rating of {anime[2]}")
+        await ctx.send(f"Try out \n{anime}")
     else:
         await ctx.send(f"Unfortunately we could not find an anime like that, type '>genres' for more information")
 
@@ -63,24 +65,21 @@ async def search(ctx, *anime):
     res = Database.Search(anime)
 
     if len(res) != 0:
-        out = f'Found: {len(res)} results\n'
-        for row in res:
-            out += "Name: {}\n\tGenre: {}\n\tType: {}\n\tEpisodes: {}\n\tAverage rating: {}\n".format(
-                row[0], row[1], row[2], row[3], row[4])
+        out = f'showing {AppSettings.AppSettings["MaxSearchResults"]} of {len(res)} results\n'
+        for i, row in enumerate(res[:AppSettings.AppSettings["MaxSearchResults"]],1):
+            out += f"{i}. {row.Name}\n"
         await ctx.send(out)
     else:
         await ctx.send(f"Oops, {anime} was not found")
 
 # (type ">similar [anime name]" to use command
-
-
 @client.command()
 async def similar(ctx, *anime):
     anime = ' '.join(anime)
     if anime.strip() == '':
         await ctx.send(f"@{ctx.author} please specify an anime")
     else:
-        res = Recommender.FindSimilarJaccard(anime, 5)
+        res = Recommender.FindSimilarJaccard(anime, AppSettings.AppSettings["MaxRecommended"])
         if res == None:
             await ctx.send(f"Oops, seems like we could not find the anime called {anime}")
         else:
@@ -89,11 +88,36 @@ async def similar(ctx, *anime):
                 msg += f"Try {row[0]} it has a similarity score of {row[1] * 100}%\n"
             await ctx.send(msg)
 
-
+# (Type >random to use command)
 @client.command()
 async def random(ctx):
-    name, genre, rating = Database.Random()
-    await ctx.send(f"{name}:\n\tgenre: {genre}\n\trating: {rating}")
+    res = Database.Random()
+    await ctx.send(f"{res}")
+
+# Allows user to change settings of the bot
+#(type >set [prop] [val] where prop is a string and value is float or int)
+@client.command()
+async def set(ctx, prop, val):
+    if AppSettings.AppSettings.get(prop) == None:
+        await ctx.send('Invalid property try >settings for help')
+    else:
+        if prop == "MinSimilartityScore":
+            val =  abs(float(val))
+        else:
+            val = abs(int(val))
+        
+        AppSettings.AppSettings[prop] = val
+
+#Allows user to view the settings of the bot
+#(type >settings)
+@client.command()
+async def settings(ctx):
+    out = ""    
+    for i, key in enumerate(AppSettings.AppSettings.keys()):
+        out += f"- {key}\n\t{AppSettings.Descriptions[i]}\n"
+
+    await ctx.send(out)
+        
 
 
 client.run(TOKEN)
