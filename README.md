@@ -39,10 +39,22 @@ after this you should recieve a token for your bot add this token to your enviro
 
 ### MacOS
 
-* Navigate to your Home directory<br/>`cd .`
-* You may save a copy of the .bash_profile before editing 
-* Open the .bash_profile file<br/>`nano .bash_profile`
-* Export a variable called 'DISCORD_TOKEN'<br/>`export DISCORD_TOKEN={Your Discord token}`
+* Navigate to your Home directory
+ ```sh
+ cd 
+ ```
+* You may save a copy of the .bash_profile before editing
+```sh
+mv ~/.bash_profile ~/.bash_profile.backup
+```
+* Open the .bash_profile file
+```sh
+nano .bash_profile
+```
+* Export a variable called 'DISCORD_TOKEN'
+```sh
+export DISCORD_TOKEN={Your Discord token}
+```
 * Save the .bash_profile and restart your terminal
 
 *If you require any further assistance with this please check out [This article](https://medium.com/@himanshuagarwal1395/setting-up-environment-variables-in-macos-sierra-f5978369b255)*
